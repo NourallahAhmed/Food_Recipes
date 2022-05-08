@@ -38,14 +38,14 @@ struct Results: Codable {
 //    let license: String?
     let sourceName: String?
 //    let pricePerServing: Double?
-//    let extendedIngredients: [ExtendedIngredients]?
-//    let id: Int?
+    let extendedIngredients: [ExtendedIngredients]?
+    let id: Int?
     let title: String?
     let readyInMinutes: Int?
 //    let servings: Int?
 //    let sourceUrl: String?
     let image: String?
-//    let imageType: String?
+    let imageType: String?
     let summary: String?
 //    let cuisines: [String]?
     let dishTypes: [String]?
@@ -77,10 +77,11 @@ struct Results: Codable {
 //        let nameClean: String?
 //        let original: String?
 //        let originalName: String?
-//        let amount: Int?
-//        let unit: String?
+        let amount: Double?
+        let unit: String?
 //        let meta: [String]?
 //        let measures: Measures?
+    
 
     }
 

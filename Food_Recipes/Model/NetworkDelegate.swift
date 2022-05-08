@@ -61,7 +61,8 @@ class NetworkDelegate {
     //MARK: using AlamoFire
     
     func getAlamoFire( completion: @escaping ([Results]?) -> Void){
-   
+        //a95ffa16319749bc9c991d79da9e274c
+        //dbf6bff012ad44bfad9b5b5582c6f963 (ana)
         // 1 request
         AF.request("https://api.spoonacular.com/recipes/complexSearch?apiKey=dbf6bff012ad44bfad9b5b5582c6f963&fillIngredients=true&addRecipeInformation=true&?&query=").responseJSON(completionHandler: { response
             in
@@ -78,7 +79,8 @@ class NetworkDelegate {
                 }
                 do{
                     let result = try JSONDecoder().decode(RootClass.self, from: data)
-                    print(result.results?.first)
+                    print("from network : \(result.results?.first?.analyzedInstructions)")
+                    print("from network : \(result.number)")
                     completion(result.results)
 
     

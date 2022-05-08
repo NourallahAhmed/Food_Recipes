@@ -1,18 +1,21 @@
 //
-//  StepsTableViewCell.swift
+//  TableViewCell.swift
 //  Food_Recipes
 //
-//  Created by NourAllah Ahmed on 5/7/22.
+//  Created by NourAllah Ahmed on 5/8/22.
 //  Copyright © 2022 NourAllah Ahmed. All rights reserved.
 //
 
 import UIKit
 
-class StepsTableViewCell: UITableViewCell {
-    @IBOutlet weak var stepsDetails: UILabel!
-    
-    @IBOutlet weak var myImageView: UIImageView!
-    @IBOutlet weak var Step: UILabel!
+class TableViewCell: UITableViewCell {
+
+    @IBOutlet weak var foodImageView: UIImageView!
+       
+       @IBOutlet weak var foodTitleLabel: UILabel!
+       @IBOutlet weak var foodDishTypeLabel: UILabel!
+       @IBOutlet weak var foodHealthScoreLabel: UILabel!
+//       @IBOutlet weak var foodSummaryLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
