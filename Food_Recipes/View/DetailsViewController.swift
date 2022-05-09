@@ -34,17 +34,10 @@ class DetailsViewController: UIViewController  , UITableViewDataSource, UITableV
         let image = UIImage(named: "default.png")
         recipeImage?.image = image
         recipeImage.kf.setImage(with: imageURL, placeholder: image, options: nil, progressBlock: nil)
-        
-        
-        
-        
-        
+      
     }
     override func viewDidAppear(_ animated: Bool) {
-        if segmentalResult == 0 {
-                    stepsTable.reloadData()
-
-        }
+       
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,6 +57,7 @@ class DetailsViewController: UIViewController  , UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         
         
         switch segmentalResult

@@ -8,14 +8,14 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class myTableViewCell: UITableViewCell {
 
     @IBOutlet weak var foodImageView: UIImageView!
        
        @IBOutlet weak var foodTitleLabel: UILabel!
        @IBOutlet weak var foodDishTypeLabel: UILabel!
        @IBOutlet weak var foodHealthScoreLabel: UILabel!
-//       @IBOutlet weak var foodSummaryLabel: UILabel!
+       @IBOutlet weak var foodDurrationLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

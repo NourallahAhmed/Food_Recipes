@@ -76,13 +76,14 @@ class HomeViewController: UIViewController
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? myTableViewCell
+                
+
         
-        
-        cell?.foodTitleLabel.text = String("Title: ") + String( results?[indexPath.row].title ?? " ")
-        //               cell?.foodSummaryLabel.text = " "//results?[indexPath.row].summary!
-        cell?.foodHealthScoreLabel.text =  String("Health Score: ") + String(format: "%.2d" , results?[indexPath.row].healthScore ?? 0) + String(" %")
-//        cell?.foodDishTypeLabel.text = String("Dish Type :") + String(results?[indexPath.row].dishTypes?.description ?? " ")
+        cell?.foodTitleLabel.text = String( results?[indexPath.row].title ?? " ")
+        cell?.foodDurrationLabel.text = String(format: "%.2d" , results?[indexPath.row].readyInMinutes ?? 0)
+        cell?.foodHealthScoreLabel.text = String(format: "%.2d" , results?[indexPath.row].healthScore ?? 0) + String(" %")
+        cell?.foodDishTypeLabel.text = String(results?[indexPath.row].dishTypes?.first ?? " ")
         let image = UIImage(named: "default.png")
         cell?.foodImageView?.image = image
         let url = URL(string: results?[indexPath.row].image ?? " ")
@@ -134,10 +135,8 @@ class HomeViewController: UIViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //  Get the new view controller using segue.destination.
         //  Pass the selected object to the new view controller.
-        var index = myTable.indexPathForSelectedRow
-        print("hiiiii")
-        var DVC : DetailsViewController  = segue.destination as! DetailsViewController
-        print(results?[index!.row].analyzedInstructions?.first?.steps)
+        let index = myTable.indexPathForSelectedRow
+        let DVC : DetailsViewController  = segue.destination as! DetailsViewController
         DVC.receivedResult = results?[index!.row]
     }
     //
