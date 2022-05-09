@@ -20,6 +20,7 @@ class DetailsViewController: UIViewController  , UITableViewDataSource, UITableV
     var segmentalResult:Int?
     
     
+    @IBOutlet weak var segmentalOutlet: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +35,9 @@ class DetailsViewController: UIViewController  , UITableViewDataSource, UITableV
         let image = UIImage(named: "default.png")
         recipeImage?.image = image
         recipeImage.kf.setImage(with: imageURL, placeholder: image, options: nil, progressBlock: nil)
+        segmentalOutlet.selectedSegmentIndex = 0
+        self.segmentalAction(segmentalOutlet)
+        stepsTable.reloadData()
       
     }
     override func viewDidAppear(_ animated: Bool) {

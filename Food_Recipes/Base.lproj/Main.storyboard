@@ -253,6 +253,7 @@
                     <navigationItem key="navigationItem" id="ufX-N3-noz"/>
                     <connections>
                         <outlet property="recipeImage" destination="Ufc-ah-vai" id="3t0-2k-jJH"/>
+                        <outlet property="segmentalOutlet" destination="Esm-fw-Il2" id="0jn-Gd-74g"/>
                         <outlet property="stepsTable" destination="ER4-Qw-Hut" id="rX0-gD-xfP"/>
                     </connections>
                 </viewController>
