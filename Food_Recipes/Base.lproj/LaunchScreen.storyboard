@@ -15,35 +15,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="cook3" translatesAutoresizingMaskIntoConstraints="NO" id="a1c-lX-NDp">
-                                <rect key="frame" x="0.0" y="44" width="414" height="714"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="makecooking" translatesAutoresizingMaskIntoConstraints="NO" id="a1c-lX-NDp">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ihk-MD-KZR">
-                                <rect key="frame" x="115" y="766" width="170" height="75"/>
-                                <attributedString key="attributedText">
-                                    <fragment content=" Foody">
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="37" name="Chalkduster"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="a1c-lX-NDp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2Ay-80-gFY"/>
-                            <constraint firstItem="Ihk-MD-KZR" firstAttribute="top" secondItem="a1c-lX-NDp" secondAttribute="bottom" constant="8" id="5PR-zD-fI2"/>
                             <constraint firstItem="a1c-lX-NDp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hey-Lh-xLw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ihk-MD-KZR" secondAttribute="bottom" constant="21" id="Iw0-fV-NOm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a1c-lX-NDp" secondAttribute="bottom" id="PT9-ai-jXt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a1c-lX-NDp" secondAttribute="trailing" id="Qqy-DZ-lTf"/>
-                            <constraint firstItem="Ihk-MD-KZR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="115" id="S6u-ra-uoF"/>
                             <constraint firstItem="a1c-lX-NDp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZA5-Pr-dip"/>
                             <constraint firstItem="a1c-lX-NDp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dZb-tf-gUU"/>
                             <constraint firstItem="a1c-lX-NDp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eeS-71-WZw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ihk-MD-KZR" secondAttribute="trailing" constant="133" id="gcO-y8-wPh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -54,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cook3" width="400" height="500"/>
+        <image name="makecooking" width="400" height="600"/>
     </resources>
 </document>

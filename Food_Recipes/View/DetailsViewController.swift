@@ -8,30 +8,31 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController  , UITableViewDataSource, UITableViewDelegate {
+class DetailsViewController: UIViewController{
     
     
     
     @IBOutlet weak var stepsTable: UITableView!
-    
-    
     @IBOutlet weak var recipeImage: UIImageView!
+    @IBOutlet weak var segmentalOutlet: UISegmentedControl!
+    
     var receivedResult : Results?
     var segmentalResult:Int?
-    
-    
-    @IBOutlet weak var segmentalOutlet: UISegmentedControl!
+      
+      
     override func viewDidLoad() {
         super.viewDidLoad()
         
         stepsTable.delegate = self
         stepsTable.dataSource = self
+        stepsTable.separatorStyle = .singleLine
+        
         let imageId = receivedResult?.id
         let imageType = receivedResult?.imageType
-        let imageURL = URL(string: "https://spoonacular.com/recipeImages/\(imageId!)-312x150.\(imageType!)")
+        let imageURL = URL(string: "https://spoonacular.com/recipeImages/\(imageId!)-556x370.\(imageType!)")
         
         
-        print("url reciepe : https://spoonacular.com/recipeImages/\(imageId!)-312x150.\(imageType!)")
+        print("url reciepe : https://spoonacular.com/recipeImages/\(imageId!)-556x370.\(imageType!)")
         let image = UIImage(named: "default.png")
         recipeImage?.image = image
         recipeImage.kf.setImage(with: imageURL, placeholder: image, options: nil, progressBlock: nil)
@@ -40,10 +41,33 @@ class DetailsViewController: UIViewController  , UITableViewDataSource, UITableV
         stepsTable.reloadData()
       
     }
-    override func viewDidAppear(_ animated: Bool) {
-       
+    
+    
+    @IBAction func segmentalAction(_ sender: UISegmentedControl) {
         
+        switch sender.selectedSegmentIndex {
+        case 0:
+            segmentalResult = 0
+            stepsTable.reloadData()
+        case 1:
+            segmentalResult = 1
+            stepsTable.reloadData()
+        default:
+           break
+        }
     }
+      /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+}
+extension DetailsViewController :  UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         var theReturnValue :Int = 0
@@ -110,7 +134,7 @@ class DetailsViewController: UIViewController  , UITableViewDataSource, UITableV
                 url = URL(string: "https://spoonacular.com/cdn/equipment_100x100/\(String(describing: eqimagename))")
             }
             
-            //        print("url = https://spoonacular.com/cdn/ingredients_100x100/\(imagename! )")
+            //print("url = https://spoonacular.com/cdn/ingredients_100x100/\(imagename! )")
             cell?.myImageView?.kf.setImage(with: url, placeholder: image, options: nil, progressBlock: nil)
             
             return cell!
@@ -121,30 +145,5 @@ class DetailsViewController: UIViewController  , UITableViewDataSource, UITableV
         return UITableViewCell()
     }
     
-    
-    @IBAction func segmentalAction(_ sender: UISegmentedControl) {
-        
-        switch sender.selectedSegmentIndex {
-        case 0:
-            segmentalResult = 0
-            stepsTable.reloadData()
-        case 1:
-            segmentalResult = 1
-            stepsTable.reloadData()
-        default:
-//            segmentalResult = 0
-            stepsTable.reloadData()
-            print("nothing")
-        }
-    }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

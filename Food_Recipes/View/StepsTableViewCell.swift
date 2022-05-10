@@ -15,6 +15,7 @@ class StepsTableViewCell: UITableViewCell {
     @IBOutlet weak var Step: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+       
         // Initialization code
     }
 

@@ -61,14 +61,15 @@ class NetworkDelegate {
     //MARK: using AlamoFire
     
     func getAlamoFire( query :String? , completion: @escaping ([Results]?) -> Void){
-        //a95ffa16319749bc9c991d79da9e274c
+        //API_KEYS:
+        //a95ffa16319749bc9c991d79da9e274c (gweda)
         //dbf6bff012ad44bfad9b5b5582c6f963 (ana)
-        
-        
+        //7994c04921934c3ca7b2c8a5ec1e1d51 (ITI)
+        //a7f2147152a342bfa5c00a841dfe9e49  (nerdeen)
         let parameters = ["query" : query ?? " "] as [String : String]
         //&query=pizza
         // 1 request
-        AF.request("https://api.spoonacular.com/recipes/complexSearch?apiKey=a95ffa16319749bc9c991d79da9e274c&fillIngredients=true&addRecipeInformation=true&?",parameters: parameters).responseJSON(completionHandler: { response
+        AF.request("https://api.spoonacular.com/recipes/complexSearch?apiKey=a7f2147152a342bfa5c00a841dfe9e49&fillIngredients=true&addRecipeInformation=true&?",parameters: parameters).responseJSON(completionHandler: { response
             in
            // get request
            
