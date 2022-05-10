@@ -17,7 +17,7 @@ class NetworkDelegate {
        func getRequest(complitionHandler: @escaping  (RootClass?) -> Void ){
         
         // 1 URL
-        let myUrl = URL(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=dbf6bff012ad44bfad9b5b5582c6f963&fillIngredients=true&addRecipeInformation=true&?&query=")
+        let myUrl = URL(string: "https://api.spoonacular.com/recipes/complexSearch?apiKey=dbf6bff012ad44bfad9b5b5582c6f963&fillIngredients=true&addRecipeInformation=true&?&query=pizza")
         guard let newUrl = myUrl else {
             print("Error while unwrapping URL")
             return
@@ -60,11 +60,15 @@ class NetworkDelegate {
     
     //MARK: using AlamoFire
     
-    func getAlamoFire( completion: @escaping ([Results]?) -> Void){
+    func getAlamoFire( query :String? , completion: @escaping ([Results]?) -> Void){
         //a95ffa16319749bc9c991d79da9e274c
         //dbf6bff012ad44bfad9b5b5582c6f963 (ana)
+        
+        
+        let parameters = ["query" : query ?? " "] as [String : String]
+        //&query=pizza
         // 1 request
-        AF.request("https://api.spoonacular.com/recipes/complexSearch?apiKey=dbf6bff012ad44bfad9b5b5582c6f963&fillIngredients=true&addRecipeInformation=true&?&query=").responseJSON(completionHandler: { response
+        AF.request("https://api.spoonacular.com/recipes/complexSearch?apiKey=a95ffa16319749bc9c991d79da9e274c&fillIngredients=true&addRecipeInformation=true&?",parameters: parameters).responseJSON(completionHandler: { response
             in
            // get request
            

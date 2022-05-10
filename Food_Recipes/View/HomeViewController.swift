@@ -11,7 +11,7 @@ import CoreData
 import Network
 import Kingfisher
 class HomeViewController: UIViewController
-    ,UITableViewDataSource ,UITableViewDelegate
+    ,UITableViewDataSource ,UITableViewDelegate,  UISearchBarDelegate
 {
     
     
@@ -24,6 +24,7 @@ class HomeViewController: UIViewController
     
     @IBOutlet weak var myTable: UITableView!
     
+    @IBOutlet weak var searchBar: UISearchBar!
     //MARK: DATA
     var results : [Results]?
     
@@ -41,6 +42,7 @@ class HomeViewController: UIViewController
         
         myTable.delegate = self
         myTable.dataSource = self
+        searchBar.delegate = self
         print("why")
         //        self.homeCollectionView.delegate = self
         //        self.homeCollectionView.dataSource = self
@@ -52,7 +54,7 @@ class HomeViewController: UIViewController
         monitor.pathUpdateHandler = { pathUpdateHandler  in
             if pathUpdateHandler.status == .satisfied {
                 print("Internet connection is on.")
-                self.myNetworkDelegate.getAlamoFire(completion:{ (re) in
+                self.myNetworkDelegate.getAlamoFire(query: "",completion:{ (re) in
                     DispatchQueue.main.async {
                         self.myIndicator.stopAnimating()
                         self.results = re
@@ -92,42 +94,22 @@ class HomeViewController: UIViewController
         
         return cell!
     }
-    /*
-     
-     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-     return results?.count ?? 0
-     }
-     
-     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? FoodCollectionViewCell
-     
-     
-     cell?.foodTitleLabel.text = String("Title: ") + String( results?[indexPath.row].title ?? " ")
-     cell?.foodSummaryLabel.text = " "//results?[indexPath.row].summary!
-     cell?.foodHealthScoreLabel.text =  String("Health Score: ") + String(format: "%.2d" , results?[indexPath.row].healthScore ?? 0) + String(" %")
-     cell?.foodDishTypeLabel.text = String("Dish Type :") + String(results?[indexPath.row].dishTypes?.first ?? " ")
-     let image = UIImage(named: "default.png")
-     cell?.foodImageView?.image = image
-     let url = URL(string: results?[indexPath.row].image ?? " ")
-     cell?.foodImageView?.kf.setImage(with: url, placeholder: image, options: nil, progressBlock: nil)
-     
-     print("hiiiii")
-     
-     return cell!
-     }
-     
-     
-     */
     
-    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    //
-    //        var selected = results?[indexPath.row]
-    //        print("the next \(selected)")
-    //        var DVC = self.storyboard?.instantiateViewController(withIdentifier: "DVC") as! DetailsViewController
-    //        DVC.analyzedInstructions = results?[indexPath.row].analyzedInstructions
-    //        self.navigationController?.pushViewController(DVC, animated: true)
     
-    //    }
+    //MARK: -Search Bar
+    // This method updates filteredData based on the text in the Search Box
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+        self.myIndicator.startAnimating()
+        self.myNetworkDelegate.getAlamoFire(query:searchText,completion:{ (re) in
+            DispatchQueue.main.async {
+                self.myIndicator.stopAnimating()
+                self.results = re
+                //                        self.homeCollectionView.reloadData()
+                self.myTable.reloadData()
+            }
+        })
+    }
     
     // MARK: - Navigation
     

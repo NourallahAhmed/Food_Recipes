@@ -301,7 +301,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gFZ-1u-NeR">
-                                <rect key="frame" x="0.0" y="195" width="414" height="667"/>
+                                <rect key="frame" x="0.0" y="283" width="414" height="579"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="291" id="Iz7-Ak-xe2" customClass="myTableViewCell" customModule="Food_Recipes" customModuleProvider="target">
@@ -406,13 +406,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="R6I-lA-5xd">
+                                <rect key="frame" x="4" y="211" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="gFZ-1u-NeR" firstAttribute="top" secondItem="9d5-g1-kzw" secondAttribute="bottom" constant="33.5" id="4jX-h3-Wot"/>
+                            <constraint firstItem="R6I-lA-5xd" firstAttribute="trailing" secondItem="KE4-oJ-f4d" secondAttribute="trailing" constant="4" id="8Ru-kj-CcE"/>
                             <constraint firstItem="gFZ-1u-NeR" firstAttribute="leading" secondItem="KE4-oJ-f4d" secondAttribute="leading" id="AmX-N5-DZ7"/>
+                            <constraint firstItem="R6I-lA-5xd" firstAttribute="top" secondItem="9d5-g1-kzw" secondAttribute="bottom" constant="49.5" id="KZ8-W5-gKV"/>
                             <constraint firstItem="KE4-oJ-f4d" firstAttribute="trailing" secondItem="gFZ-1u-NeR" secondAttribute="trailing" id="MfZ-fu-11i"/>
+                            <constraint firstItem="R6I-lA-5xd" firstAttribute="leading" secondItem="KE4-oJ-f4d" secondAttribute="leading" constant="4" id="REe-DW-A3O"/>
                             <constraint firstItem="KE4-oJ-f4d" firstAttribute="bottom" secondItem="gFZ-1u-NeR" secondAttribute="bottom" id="isH-EW-vUG"/>
+                            <constraint firstItem="gFZ-1u-NeR" firstAttribute="top" secondItem="R6I-lA-5xd" secondAttribute="bottom" constant="16" id="oet-7n-f3u"/>
                             <constraint firstItem="KE4-oJ-f4d" firstAttribute="trailing" secondItem="9d5-g1-kzw" secondAttribute="trailing" constant="112" id="sDR-De-Oav"/>
                             <constraint firstItem="9d5-g1-kzw" firstAttribute="top" secondItem="KE4-oJ-f4d" secondAttribute="top" constant="15" id="v8f-1K-EJN"/>
                             <constraint firstItem="9d5-g1-kzw" firstAttribute="leading" secondItem="KE4-oJ-f4d" secondAttribute="leading" constant="121" id="vDg-AN-tMC"/>
@@ -422,6 +429,7 @@
                     <navigationItem key="navigationItem" id="AH9-iJ-luo"/>
                     <connections>
                         <outlet property="myTable" destination="gFZ-1u-NeR" id="5H4-UQ-n2V"/>
+                        <outlet property="searchBar" destination="R6I-lA-5xd" id="hEn-qI-ae7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vj1-tc-7oy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
