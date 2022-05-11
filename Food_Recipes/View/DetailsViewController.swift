@@ -10,8 +10,7 @@ import UIKit
 
 class DetailsViewController: UIViewController{
     
-    
-    
+        
     @IBOutlet weak var stepsTable: UITableView!
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var segmentalOutlet: UISegmentedControl!
@@ -19,14 +18,11 @@ class DetailsViewController: UIViewController{
     var receivedResult : Results?
     var segmentalResult:Int?
       
-      
     override func viewDidLoad() {
         super.viewDidLoad()
         
         stepsTable.delegate = self
         stepsTable.dataSource = self
-        stepsTable.separatorStyle = .singleLine
-        
         let imageId = receivedResult?.id
         let imageType = receivedResult?.imageType
         let imageURL = URL(string: "https://spoonacular.com/recipeImages/\(imageId!)-556x370.\(imageType!)")
@@ -44,14 +40,20 @@ class DetailsViewController: UIViewController{
     
     
     @IBAction func segmentalAction(_ sender: UISegmentedControl) {
-        
+        let startIndexPath : IndexPath = IndexPath(row: 0, section: 0)
+
         switch sender.selectedSegmentIndex {
         case 0:
             segmentalResult = 0
+            stepsTable.scrollToRow(at: startIndexPath , at: .top , animated: true)
+            
             stepsTable.reloadData()
         case 1:
             segmentalResult = 1
+            
+            stepsTable.scrollToRow(at: startIndexPath , at: .top , animated: true)
             stepsTable.reloadData()
+
         default:
            break
         }
@@ -112,7 +114,7 @@ extension DetailsViewController :  UITableViewDataSource, UITableViewDelegate {
             
             // print("url = https://spoonacular.com/cdn/ingredients_100x100/\(imagename! )")
             cell?.myImageView?.kf.setImage(with: url, placeholder: image, options: nil, progressBlock: nil)
-            
+
             return cell!
         case 1:
             print("the steps")
@@ -136,7 +138,6 @@ extension DetailsViewController :  UITableViewDataSource, UITableViewDelegate {
             
             //print("url = https://spoonacular.com/cdn/ingredients_100x100/\(imagename! )")
             cell?.myImageView?.kf.setImage(with: url, placeholder: image, options: nil, progressBlock: nil)
-            
             return cell!
         default:
             break

@@ -11,6 +11,7 @@ import UIKit
 class StepsTableViewCell: UITableViewCell {
     @IBOutlet weak var stepsDetails: UILabel!
     
+    @IBOutlet weak var myView: CardView!
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var Step: UILabel!
     override func awakeFromNib() {
