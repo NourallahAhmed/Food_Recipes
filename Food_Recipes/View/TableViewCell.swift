@@ -19,12 +19,12 @@ class myTableViewCell: UITableViewCell {
        @IBOutlet weak var foodDurrationLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backView.layer.borderColor = UIColor.systemBlue.cgColor
-        backView.backgroundColor = UIColor(named: "#f8f8ff")
-        backView.layer.cornerRadius = backView.frame.height/6
-
-        self.backView.layer.borderWidth = 1
-        
+//        self.backView.layer.borderColor = UIColor.systemBlue.cgColor
+//        backView.backgroundColor = UIColor(named: "#f8f8ff")
+//        backView.layer.cornerRadius = backView.frame.height/6
+//
+//        self.backView.layer.borderWidth = 1
+//        
         //MARK: - image
         
 //        foodImageView.layer.borderWidth = 1

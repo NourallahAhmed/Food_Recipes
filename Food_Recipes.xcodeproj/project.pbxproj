@@ -19,6 +19,7 @@
 		9B84ED302826F16C00B3F5B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B84ED2E2826F16C00B3F5B4 /* LaunchScreen.storyboard */; };
 		9B84ED3A2826F7FF00B3F5B4 /* NetworkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B84ED392826F7FF00B3F5B4 /* NetworkDelegate.swift */; };
 		9B84ED3C28270E5900B3F5B4 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B84ED3B28270E5900B3F5B4 /* ResponseModel.swift */; };
+		9BA3DDAF282BB2CF00BA5714 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3DDAE282BB2CF00BA5714 /* CardView.swift */; };
 		E1FBA6338F2F8F984F22CA90 /* Pods_Food_Recipes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFDC7826AAE888DEE938251 /* Pods_Food_Recipes.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		9B84ED312826F16C00B3F5B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B84ED392826F7FF00B3F5B4 /* NetworkDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDelegate.swift; sourceTree = "<group>"; };
 		9B84ED3B28270E5900B3F5B4 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		9BA3DDAE282BB2CF00BA5714 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		CBFDC7826AAE888DEE938251 /* Pods_Food_Recipes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Recipes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 				9B2612FC282772AC007D4898 /* DetailsViewController.swift */,
 				9B2612FE282772D0007D4898 /* StepsTableViewCell.swift */,
 				9B2613002827C8AF007D4898 /* TableViewCell.swift */,
+				9BA3DDAE282BB2CF00BA5714 /* CardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				9B2612FD282772AC007D4898 /* DetailsViewController.swift in Sources */,
 				9B84ED212826F16B00B3F5B4 /* AppDelegate.swift in Sources */,
 				9B84ED232826F16B00B3F5B4 /* SceneDelegate.swift in Sources */,
+				9BA3DDAF282BB2CF00BA5714 /* CardView.swift in Sources */,
 				9B2612FF282772D0007D4898 /* StepsTableViewCell.swift in Sources */,
 				9B2613012827C8AF007D4898 /* TableViewCell.swift in Sources */,
 				9B84ED3C28270E5900B3F5B4 /* ResponseModel.swift in Sources */,

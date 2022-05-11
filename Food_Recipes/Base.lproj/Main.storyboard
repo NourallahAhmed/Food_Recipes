@@ -314,9 +314,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="291"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GmQ-x5-LWo">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GmQ-x5-LWo" customClass="CardView" customModule="Food_Recipes" customModuleProvider="target">
                                                     <rect key="frame" x="16" y="16" width="382" height="252"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCg-L8-Fk9">
                                                     <rect key="frame" x="273" y="128" width="121" height="24"/>
@@ -370,6 +370,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="iCg-L8-Fk9" firstAttribute="leading" secondItem="hdR-oc-n6d" secondAttribute="trailing" constant="8" id="0rv-IT-XA0"/>
                                                 <constraint firstItem="GmQ-x5-LWo" firstAttribute="top" secondItem="TKl-kt-yeO" secondAttribute="top" constant="16" id="1wK-Ux-Dm4"/>
@@ -418,7 +419,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gFZ-1u-NeR" firstAttribute="leading" secondItem="KE4-oJ-f4d" secondAttribute="leading" id="AmX-N5-DZ7"/>
                             <constraint firstItem="R6I-lA-5xd" firstAttribute="top" secondItem="9d5-g1-kzw" secondAttribute="bottom" constant="16" id="CqF-tE-MJU"/>
