@@ -141,7 +141,7 @@ extension HomeViewController : UISearchBarDelegate{
         print(searchText)
         self.myIndicator.startAnimating()
         self.monitor.pathUpdateHandler = { pathUpdateHandler  in
-            if pathUpdateHandler.status != .satisfied {
+            if pathUpdateHandler.status == .satisfied {
                 print("Internet connection is on.")
                 self.sendRequest(query: searchText)
             }
